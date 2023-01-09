@@ -2,12 +2,14 @@
 
 <!-- añadir setup a la etiqueta script -->
 <script setup> 
-
+//interpolación de texto
+const name = 'Vue dinámico';
 </script>
 
 <!-- template puede renderizar todo el componente html -->
 <template>
-  <h1>Hola Vue.js</h1>
+  <!-- llamamos el contenido de la constante {{name}} -->
+  <h1>Hola {{name}}!</h1>
 </template>
 
 <style>
