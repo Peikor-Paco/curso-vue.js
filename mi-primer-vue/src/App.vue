@@ -31,9 +31,24 @@ const activo = true;
   <h2>{{ arrayColores }}</h2>
 
   <h2>{{ activo ? "Soy activo" : "No soy activo" }}</h2>
+  <!-- v-if -->
+  <p v-if="activo">Estoy activo</p>
+  <p v-if="!activo">Estoy inactivo</p>
+
+  <!-- v-if v-else siempre tiene que estar seguido al v-if -->
+
+  <p v-if="activo">Estoy activo con else</p>
+  <p v-else>Estoy inactivo con else</p>
 
 
-  
+  <!-- v-if v-els-if -->
+
+  <p v-if="activo === true">Estoy activo con else if</p>
+  <p v-else-if="activo === false">Estoy inactivo con else if</p>
+  <p v-else>Estoy indeciso con else if </p>
+
+  <!-- v-show oculta atraves de css con el display none -->
+  <p v-show="activo">Estoy visible con v-show</p>
 </template>
 
 <style>
