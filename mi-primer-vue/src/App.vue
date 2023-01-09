@@ -1,15 +1,20 @@
-<!-- Evento Click (v-on) o @ -->
+<!-- Ejemplo de reactividad -->
 
 <!-- añadir setup a la etiqueta script -->
 <script setup> 
 
+import { ref } from "vue";
+
 //interpolación de texto
 const name = 'Vue dinámico';
 
-//método - methods
+// cambiamos la variable por un ref y q se renderice
+const counter = ref(0)
 
-const handleClick = (message) => {
-  console.log(message);
+// incremento de cantidad
+const increment = () => {
+  // la variable se convierte en un objeto hay que entrar en el valor del objeto
+  counter.value ++;
 }
 
 
@@ -19,10 +24,12 @@ const handleClick = (message) => {
 <template>
   <!-- llamamos a lam fiunción que hemops declarado -->
   <h1>Hola {{name}}!</h1>
-   <!-- eventos de click en raton -->
-  <button v-on:click.right.prevent="handleClick('texto Right')">Activame right</button>
-  <button @click="handleClick('Texto Left')">Activame left</button>
-  <button @click.middle="handleClick('Texto Middle')">Activame middle</button>
+
+  <h2>{{ counter }}</h2>
+  <button @click="increment">Aumentar</button>
+
+
+
 </template>
 
 <style>
