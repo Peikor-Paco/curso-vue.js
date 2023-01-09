@@ -13,6 +13,11 @@ const arrayColores = ["blue","yellow"]
 
 //Booleano
 const activo = true;
+
+
+// v-for iterar sobre una lista de elementos. 
+const arrayFrutas = ["🍎", "🍌", "🍉", "🍓", "🍒"];
+
 </script>
 
 <!-- template puede renderizar todo el componente html -->
@@ -49,6 +54,14 @@ const activo = true;
 
   <!-- v-show oculta atraves de css con el display none -->
   <p v-show="activo">Estoy visible con v-show</p>
+
+
+  <!-- v-for -->
+  <ul>
+    <li v-for="(fruta, index) in arrayFrutas" :key="index">
+      {{ index + 1 }} {{ fruta }}
+    </li>
+  </ul>
 </template>
 
 <style>
