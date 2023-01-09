@@ -19,8 +19,10 @@ const handleClick = (message) => {
 <template>
   <!-- llamamos a lam fiunción que hemops declarado -->
   <h1>Hola {{name}}!</h1>
-  <button v-on:click="handleClick('texto 1')">Activame</button>
-  <button @click="handleClick('Texto 2')">Activame 2</button>
+   <!-- eventos de click en raton -->
+  <button v-on:click.right.prevent="handleClick('texto Right')">Activame right</button>
+  <button @click="handleClick('Texto Left')">Activame left</button>
+  <button @click.middle="handleClick('Texto Middle')">Activame middle</button>
 </template>
 
 <style>
