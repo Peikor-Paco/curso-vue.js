@@ -1,10 +1,13 @@
-<!-- Propiedades computadas o calculadas -->
+<!-- Práctica
+Agrega un botón para disminuir el contador.
+Agrega un botón para resetear el contador.
+Pinta el contador en rojo cuando el valor sea menor a cero.
+Pinta el contador en verde cuando el valor sea mayor a cero. -->
 
 <!-- añadir setup a la etiqueta script -->
 <script setup> 
 
-// importamos el computed
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
 //interpolación de texto
 const name = 'Vue dinámico';
@@ -27,20 +30,7 @@ const reset = () => {
 
 }
 
-// el computed siempre recibe una funcion de flecha y tiene que retornar algo
-const classCounter = computed(() => { 
-  if(counter.value === 0) {
-    return 'zero'
-  }
 
-  if(counter.value > 0) {
-    return 'positive'
-  }
-
-  if(counter.value < 0) {
-    return 'negative'
-  }
-})
 </script>
 
 <!-- template puede renderizar todo el componente html -->
@@ -49,8 +39,14 @@ const classCounter = computed(() => {
   <!-- llamamos a lam fiunción que hemops declarado -->
   <h1>Hola {{name}}!</h1>
 
-   <!-- clases dinamicaS -->
-  <h2 :class="classCounter">
+  
+
+  <h2 v-if="counter <= 0" style="color:red">{{ counter }}</h2>
+  <h2 v-else style="color:green" >{{ counter }}</h2>
+
+
+ <!-- clases dinamicaS -->
+  <h2 :class="counter >= 0 ? 'positive' : 'negative'">
         {{ counter }}
   </h2>
 
@@ -76,8 +72,5 @@ const classCounter = computed(() => {
 
 .positive {
     color: green;
-}
-.zero {
-  color: peru;
 }
 </style>
