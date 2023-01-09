@@ -8,8 +8,8 @@ const name = 'Vue dinámico';
 
 //método - methods
 
-const handleClick = () => {
-  console.log("me distes click");
+const handleClick = (message) => {
+  console.log(message);
 }
 
 
@@ -19,8 +19,8 @@ const handleClick = () => {
 <template>
   <!-- llamamos a lam fiunción que hemops declarado -->
   <h1>Hola {{name}}!</h1>
-  <button v-on:click="handleClick">Activame</button>
-  <button @click="handleClick">Activame 2</button>
+  <button v-on:click="handleClick('texto 1')">Activame</button>
+  <button @click="handleClick('Texto 2')">Activame 2</button>
 </template>
 
 <style>
