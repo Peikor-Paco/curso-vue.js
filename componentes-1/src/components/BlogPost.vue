@@ -1,7 +1,7 @@
 <script setup>
 // Props y Multiples prop
 // definimos los props lo qiue son los elementos dinamicos en un array de 
-defineProps(['title', 'content']);
+defineProps(['title', 'content', 'colorText']);
 
 </script>
 
@@ -11,7 +11,8 @@ defineProps(['title', 'content']);
 <div class="card">
     <div class="card-body">
         <!-- usamos la interpolación -->
-        <h5 class="card-title">{{ title }}</h5>
+        <!-- usamos las clases -->
+        <h5 class="card-title" :class="`text-${colorText}`">{{ title }}</h5>
         <p class="card-text">{{ content }}</p>
     </div>
 </div>

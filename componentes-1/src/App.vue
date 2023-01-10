@@ -18,10 +18,11 @@ import BlogPost from './components/BlogPost.vue';
     </div>
 
     <hr />
-
+    <!-- Peopos en clases-->
     <BlogPost 
       title="Post 1"
       content="Contenido 1"
+      colorText="secondary"
     />
     <BlogPost 
       title="Post 2"
