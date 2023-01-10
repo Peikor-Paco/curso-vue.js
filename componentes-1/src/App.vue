@@ -2,6 +2,7 @@
 
 // importamos el componente boton contador
 import ButtonCounter from './components/ButtonCounter.vue';
+import BlogPost from './components/BlogPost.vue';
 
 </script>
 
@@ -13,8 +14,23 @@ import ButtonCounter from './components/ButtonCounter.vue';
     <br>
     <div class="d-flex">
       <!-- llamamos al bototn-->
-      <ButtonCounter></ButtonCounter>
+      <ButtonCounter />
     </div>
+
+    <hr />
+
+    <BlogPost 
+      title="Post 1"
+      content="Contenido 1"
+    />
+    <BlogPost 
+      title="Post 2"
+      content="Contenido 2"
+    />
+    <BlogPost 
+      title="Post 3"
+      content="Contenido 3"
+    />
   </div>
 </div>
 </template>
